@@ -8221,14 +8221,17 @@ main {
       display: inline-block; }
       .banner .nav-primary .nav li a {
         display: block;
-        padding: 0 20px;
+        padding: 0;
+        margin: 30px 20px;
+        line-height: 20px;
         color: #408d7d;
-        line-height: 80px;
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
         font-size: 14px; }
         .banner .nav-primary .nav li a:hover {
           color: #f58732; }
+          .banner .nav-primary .nav li a.current-page {
+          border-bottom: 2px solid #408d7d; }
         .banner .nav-primary .nav li a.signup-cta {
           background: #f58732;
           border-radius: 2px;
