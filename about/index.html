@@ -2,6 +2,7 @@
 
 <html lang="en">
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,6 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="http://ionicons.com/css/ionicons.min.css?v=2.0.1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet">
     <link href="../dist/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -305,7 +307,7 @@
                         <div class="researcher entry text-center">
                             <figure><img src="../assets/images/lara.jpg" class="img-fluid img-circle" /></figure>
                             <h5>Principal Investigator</h5>
-                            <p>Lara Marngravite, PhD<span>Sage Bionetworks</span></p>
+                            <p>Lara Mangravite, PhD<span>Sage Bionetworks</span></p>
                         </div>
                     </div>
                 </div>
@@ -325,7 +327,15 @@
                         <div class="entry">
                             <h1>Become a Partner</h1>
                             <p>We are releasing this research app soon. Want to be the first to try it out? Leave us your email address to be notified when it’s available.</p>
-                            <a href="https://docs.google.com/a/eatsleepwork.com/forms/d/1jSSf5qeQ-zGz36a7eGn2VOzN-ur3yc0dFftltl8UCXA/formrestricted?edit_requested=true" target="_blank" class="btn btn-opaque">Sign Up</a>
+                            <form action="https://docs.google.com/a/sagebase.org/forms/d/e/1FAIpQLSfccdSbYY0P3_Y2_mcjMIPinxy2OFjhNhlqnbFDMzh0GUzpUA/formResponse" target="_self" method="POST" id="mG61Hd">
+                                <!--Input for Email-->
+                                <label for="email">
+                                    <input name="entry.1045781291" type="text" id="email" placeholder="  Email (required)" style="height:3em; width:300px;">
+
+                                    <!--Submit email-->
+                                    <input class="btn btn-opaque" type="submit" value="Sign Up">
+                                    </label>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -352,25 +362,45 @@
             </div>
         </div>
     </footer>
+    
     <script src="../dist/js/main.min.js"></script>
+    <script src="../assets/js/plugins/slick.min.js"> </script>
     <script>
-        var width = $(window).width();
-        if (width < 768) {
-            $('#desktop_footer').hide();
-        } else {
-            $('#fullpage').fullpage({
-                // anchors: ['story', 'about', 'download', 'signup-now'],
-                anchors: ['story', 'about', 'download', 'signup'],
-                navigation: true,
-                navigationPosition: 'left',
-                navigationTooltips: ['Your Story', 'Help Us Understand', 'Tell Us Your Story', 'Signup Now'],
-                slidesNavigation: true,
-                scrollBar: true
-            });
-        }
-        $('.down-anchor').click(function() {
-            $.fn.fullpage.moveSectionDown();
-        });
+
+            var width = $(window).width();
+
+            if (width < 768) {
+
+                    $('.slider').slick( {
+                        autoplay  	    : false,
+                        adaptiveHeight  : true,
+                        pauseOnHover    : false
+                    });
+                    $('.sliderNext').click( function () {
+                        $( '.slider' ).slick( 'slickNext' );
+                    });
+                    $('.sliderPrev').click( function () {
+                        $('.slider').slick( 'slickPrev' );
+                    });            
+
+            } else {
+                $('#fullpage').fullpage({
+                    anchors: ['study', 'how','research', 'signup'],
+                    navigation: true, 
+                    navigationPosition: 'left', 
+                    navigationTooltips: ['The Study', 'How It Works', 'Who is Involved', 'Signup Now'], 
+                    slidesNavigation: true,
+                    scrollBar: true,
+                    afterLoad: function(anchorLink, index){
+
+                    }
+                });
+            }      
+        
+
+        
+        
+        
     </script>
 </body>
 

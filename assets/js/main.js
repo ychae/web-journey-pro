@@ -31,17 +31,6 @@ $(document).ready(function(){
     });
 
 
-    $('.slider').slick( {
-        autoplay  	    : false,
-        adaptiveHeight  : true,
-        pauseOnHover    : false
-    });
-    $('.sliderNext').click( function () {
-        $( '.slider' ).slick( 'slickNext' );
-    });
-    $('.sliderPrev').click( function () {
-        $('.slider').slick( 'slickPrev' );
-    });
 
 });
 
