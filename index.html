@@ -21,15 +21,18 @@
             width: 100%;
             padding-left: 5px;
         }
+
         #email:focus {
             outline: none !important;
-            border:3px solid #3cbea2;
+            border: 3px solid #3cbea2;
             box-shadow: 0 0 10px #3cbea2;
         }
+
         .btn.btn-opaque {
             float: right;
             margin-top: 5px;
         }
+
         .video-text.col-md-12 {
             padding-left: 26%;
             padding-right: 26%;
@@ -46,18 +49,18 @@
 
 </head>
 <body class="">
-    <header class="banner">
+<header class="banner">
     <div class="container-fluid">
         <div class="row">
-                <div class="hamburger-menu hidden-md-up">
-                    <div class="bar"></div>	
-                </div>
+            <div class="hamburger-menu hidden-md-up">
+                <div class="bar"></div>
+            </div>
             <a class="brand hidden-md-up" href="#">Journey PRO</a>
             <div class="col-xs-12 col-sm-9 col-md-12">
                 <div class="nav-wrap">
                     <nav class="nav-primary left-nav">
                         <a class="brand hidden-md-down" href="">Journey PRO</a>
-                        
+
                     </nav>
                     <nav class="nav-primary">
                     </nav>
@@ -67,8 +70,8 @@
     </div>
 </header>
 <div id="fullpage">
-<div class="section blue_green_bg fp-normal-scroll" id="coming-soon">
-        <div class="container"> 
+    <div class="section blue_green_bg fp-normal-scroll" id="coming-soon">
+        <div class="container">
             <div class="row flex-items-xs-middle">
                 <div class="col-xs-12">
                     Coming soon...
@@ -76,20 +79,22 @@
             </div>
         </div>
 
-    </div>   
+    </div>
 
-</div> 
+</div>
 
 <!-- Modal -->
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ion-android-close"></i></button>
-      <div class="modal-body">
-        <div class="embed-responsive embed-responsive-16by9 video-embed" id="iFrame"></div>
-      </div> 
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i
+                    class="ion-android-close"></i></button>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9 video-embed" id="iFrame"></div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <footer class="content-info">
@@ -98,7 +103,8 @@
             <div class="col-xs-12 col-sm-12 col-md-5">
                 <ul class="nav list-unstyled right-links text-right">
                     <li><p>© 2017 Journey PRO</p></li>
-                    <li><a href="privacy-policy">Privacy Policy</a></li>|
+                    <li><a href="privacy-policy">Privacy Policy</a></li>
+                    |
                     <li><a href="pw.html">Testing</a></li>
                 </ul>
             </div>
@@ -111,17 +117,17 @@
     if (width < 768) {
     } else {
         $('#fullpage').fullpage({
-            anchors: ['study', 'how','research', 'signup'],
+            anchors: ['study', 'how', 'research', 'signup'],
             slidesNavigation: true,
             scrollBar: true,
             showActiveTooltip: true,
             hybrid: true,
             fitToSection: false,
-            afterLoad: function(anchorLink, index){
+            afterLoad: function (anchorLink, index) {
             }
         });
     }
-    $('.down-anchor').click(function(){
+    $('.down-anchor').click(function () {
         $.fn.fullpage.moveSectionDown();
     });
 </script>
