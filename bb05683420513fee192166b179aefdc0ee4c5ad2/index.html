@@ -77,7 +77,8 @@
             </div>
         </div>
     </div>
-</header><div id="fullpage">
+</header>
+<div id="fullpage">
 	<div class="section blue_green_bg fp-normal-scroll" id="your-story">
         <div class="container"> 
             <div class="row flex-items-xs-middle">
@@ -98,11 +99,7 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="down-anchor" title="Scroll Down">
-            <p>Scroll Down</p>
-            <span style="display: none">Scroll Down</span>
-            <i class="ion-chevron-down"></i>
-        </a>
+        <a href="#help-us-understand" class="down-anchor"><i class="ion-chevron-down"></i></a>
     </div>    
 	<div class="section orange_bg fp-normal-scroll" id="about-the-study">
         <div class="container">
@@ -121,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="down-anchor"><i class="ion-chevron-down"></i></a>
+        <a href="#tell-story" class="down-anchor"><i class="ion-chevron-down"></i></a>
     </div>
 	<div class="section yellow_bg fp-normal-scroll" id="tell-your-story">
         <div class="container">
@@ -145,39 +142,39 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="down-anchor"><i class="ion-chevron-down"></i></a>
+        <a href="#become-a-partner" class="down-anchor"><i class="ion-chevron-down"></i></a>
     </div>
     <div class="section section_footer dark_green_bg fp-normal-scroll" id="signup-now">
-    <div class="container">
-        <div class="row flex-items-xs-middle">
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <div class="entry">
-                    <figure><img src="assets/images/JourneyPro-SignUpFooter.png" class="img-fluid" /></figure>
+        <div class="container">
+            <div class="row flex-items-xs-middle">
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <div class="entry">
+                        <figure><img src="assets/images/JourneyPro-SignUpFooter.png" class="img-fluid" /></figure>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <div class="entry">
-                    <h1>Become a Partner</h1>
-                    <p>We are releasing this research app soon. Want to be the first to try it out? Leave us your email address to be notified when it’s available.</p>
-                    <script type="text/javascript">var submitted=false;</script>
-                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thankyou.html#signup';}"></iframe>
-                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfccdSbYY0P3_Y2_mcjMIPinxy2OFjhNhlqnbFDMzh0GUzpUA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
-                        <!-- ENTER EMAIL -->
-                        <div class="row">
-                            <div class="col">
-                                <!--Input for email address-->
-                                <label for="email"></label>
-                                <input name="entry.1045781291" id="email" placeholder="Email">
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <div class="entry">
+                        <h1>Become a Partner</h1>
+                        <p>We are releasing this research app soon. Want to be the first to try it out? Leave us your email address to be notified when it’s available.</p>
+                        <script type="text/javascript">var submitted=false;</script>
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thankyou.html#signup';}"></iframe>
+                        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfccdSbYY0P3_Y2_mcjMIPinxy2OFjhNhlqnbFDMzh0GUzpUA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                            <!-- ENTER EMAIL -->
+                            <div class="row">
+                                <div class="col">
+                                    <!--Input for email address-->
+                                    <label for="email"></label>
+                                    <input name="entry.1045781291" id="email" placeholder="Email">
+                                </div>
                             </div>
-                        </div>
-                        <!-- SUBMIT BUTTON -->
-                        <input class="btn btn-opaque" id="submit" type="submit" value="Submit">
-                    </form>
+                            <!-- SUBMIT BUTTON -->
+                            <input class="btn btn-opaque" id="submit" type="submit" value="Submit">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div> 
 
 <!-- Modal -->
@@ -209,28 +206,37 @@
         </div>
     </div>
 </footer>
+
 <script src="dist/js/main.min.js"></script>
+<script src="../assets/js/plugins/slick.min.js"> </script>
 <script>
     var width = $(window).width();
     if (width < 768) {
-    } else {
-        $('#fullpage').fullpage({
-            anchors: ['study', 'how','research', 'signup'],
-            navigation: true,
-            navigationPosition: 'left',
-            navigationTooltips: ['Your Story', 'Help Us Understand', 'Telling Your Story', 'Signup Now'],
-            slidesNavigation: true,
-            scrollBar: true,
-            showActiveTooltip: true,
-            hybrid: true,
-            fitToSection: false,
-            afterLoad: function(anchorLink, index){
-            }
+        $('.slider').slick( {
+            autoplay        : false,
+            adaptiveHeight  : true,
+            pauseOnHover    : false
         });
-    }
-    $('.down-anchor').click(function(){
-        $.fn.fullpage.moveSectionDown();
-    });
+        $('.sliderNext').click( function () {
+            $( '.slider' ).slick( 'slickNext' );
+        });
+        $('.sliderPrev').click( function () {
+            $('.slider').slick( 'slickPrev' );
+        });       
+    } 
+
+    $('#fullpage').fullpage({
+        anchors: ['story', 'help-us-understand','tell-story', 'become-a-partner'],
+        navigationPosition: 'left',
+        navigationTooltips: ['Your Story', 'Help Us Understand', 'Telling Your Story', 'Become a Partner'],
+        slidesNavigation: true,
+        scrollBar: true,
+        hybrid: true,
+        fitToSection: false,
+        afterLoad: function(anchorLink, index){
+        }
+    });  
+
 </script>
 </body>
 </html>

@@ -50,7 +50,7 @@
         </div>
     </header>
     <div id="fullpage">
-        <div class="section blue_green_bg" id="about-study">
+        <div class="section blue_green_bg fp-normal-scroll" id="about-study">
             <div class="container">
                 <div class="row flex-items-xs-middle">
                     <div class="col-xs-12 col-sm-12 col-md-6">
@@ -72,7 +72,7 @@
             <a href="#how" class="down-anchor"><i class="ion-chevron-down"></i></a>
         </div>
 
-        <div class="section green_bg" id="download-the-app">
+        <div class="section green_bg fp-normal-scroll" id="download-the-app">
             <div class="sliderWrapper hidden-md-up">
                 <div class="sliderNext button">
                     <i class="ion-ios-arrow-forward"></i>
@@ -300,7 +300,7 @@
             </div>
             <a href="#research" class="down-anchor"><i class="ion-chevron-down"></i></a>
         </div>
-        <div class="section orange_bg" id="who-is-doing-the-research">
+        <div class="section orange_bg fp-normal-scroll" id="who-is-doing-the-research">
             <div class="container">
                 <div class="row flex-items-xs-middle">
                     <div class="col-xs-12 col-sm-6 col-md-6">
@@ -321,7 +321,7 @@
             </div>
             <a href="#signup" class="down-anchor"><i class="ion-chevron-down"></i></a>
         </div>
-        <div class="section section_footer dark_green_bg" id="signup-now">
+        <div class="section section_footer dark_green_bg fp-normal-scroll" id="signup-now">
             <div class="container">
                 <div class="row flex-items-xs-middle">
                     <div class="col-xs-12 col-sm-12 col-md-6">
@@ -389,23 +389,20 @@
                         $('.slider').slick( 'slickPrev' );
                     });            
 
-            } else {
-                $('#fullpage').fullpage({
-                    anchors: ['study', 'how','research', 'signup'],
-                    navigationPosition: 'left', 
-                    navigationTooltips: ['The Study', 'How It Works', 'Who is Involved', 'Signup Now'], 
-                    slidesNavigation: true,
-                    scrollBar: true,
-                    afterLoad: function(anchorLink, index){
+            } 
+            $('#fullpage').fullpage({
+                anchors: ['study', 'how','research', 'signup'],
+                navigationPosition: 'left', 
+                navigationTooltips: ['The Study', 'How It Works', 'Who is Involved', 'Signup Now'], 
+                slidesNavigation: true,
+                scrollBar: true,
+                hybrid: true,
+                fitToSection: false,
+                afterLoad: function(anchorLink, index){
 
-                    }
-                });
-            }      
-        
+                }
+            });
 
-        
-        
-        
     </script>
 </body>
 
